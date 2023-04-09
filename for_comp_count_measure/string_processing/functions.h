@@ -1,0 +1,21 @@
+// 
+// Степанов А, БПИ212
+
+// XXX: #ifndef CHW2__STRING_PROCESSING_H_
+// XXX: #define CHW2__STRING_PROCESSING_H_
+#include <string>
+#include <vector>
+
+/// Метод, реализующий алгоритм вычисления префикс-функции
+/// \param str - строка, для которой вычисляется префикс-функция
+/// \param count - счетчик сравнений
+/// \return вектор, в котором хранится префикс-функция
+std::vector<int> findPrefixFunction(const std::string& str, int64_t& count);
+
+/// Метод, реализующий алгоритм вычисления бордер-функции
+/// \param str - строка, для которой вычисляется бордер-функция
+/// \param count - счетчик сравнений
+/// \return вектор, в котором хранится бордер-функция
+std::vector<int> findBorderFunction(const std::string& str, int64_t& count);
+
+// XXX: #endif
