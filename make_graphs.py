@@ -1,4 +1,4 @@
-# 
+#
 # Степанов А, БПИ212
 
 import os
@@ -37,7 +37,8 @@ def generate_graphs_from_csv(csv_path):
                 plt.plot(string_sizes, measurements, label=measurement_type)
 
         file_name = csv_path.split('/')[-1]
-        plt.title(f'{algorithm_name} Effectiveness by String Size ({file_name})')
+        plt.title(
+            f'{algorithm_name} Effectiveness by String Size ({file_name})')
         plt.xlabel('String Size')
         plt.ylabel('Measurement Result')
 
@@ -50,9 +51,10 @@ def generate_graphs_from_csv(csv_path):
 
     plt.show()
 
+
 folders_pathes = list
 
-if not sys.argv:
+if len(sys.argv) <= 1:
     folders_pathes = list(input(
         "Input path to the folder, which contains .csv files to make graphs from: "))
 else:

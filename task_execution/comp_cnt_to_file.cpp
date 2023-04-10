@@ -12,8 +12,7 @@ void runComparisonsToFile(
     for (size_t i = 0; i < functions.size(); ++i) {
         for (size_t j = 0; j < pathes.size(); ++j) {
             std::smatch match;
-            file << names[i]
-                 << (std::regex_search(pathes[j], match, pattern) ? " - " + match.str() : "");
+            file << (std::regex_search(pathes[j], match, pattern) ? match.str() + " - " : "") << names[i];
             std::vector<int> (*func)(const std::string &, const std::string &, int64_t &) =
                 functions[i];
             std::vector<int64_t> counts = counter(func, with_substitutions, pathes[j]);
