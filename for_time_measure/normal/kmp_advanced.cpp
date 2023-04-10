@@ -1,9 +1,9 @@
-#include <iostream>
 #include <vector>
 #include <string>
 #include "string_processing/functions.h"
+#include "algorithms.h"
 
-std::vector<int> knuthMorrisPrattAdvanced(const std::string& str, const std::string& substr) {
+std::vector<int> normal::knuthMorrisPrattAdvanced(const std::string& str, const std::string& substr) {
     int n = str.length();
     int m = substr.length();
     std::vector<int> result;
