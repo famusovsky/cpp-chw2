@@ -1,7 +1,8 @@
 #include <string>
 #include <vector>
+#include "algorithms.h"
 
-std::vector<int> naiveAlgorithm(const std::string& str, const std::string& substr, int64_t& count) {
+std::vector<int> normal::naiveAlgorithm(const std::string& str, const std::string& substr, int64_t& count) {
     std::vector<int> matches;
 
     for (int i = 0; i <= str.length() - substr.length(); ++i) {

@@ -13,7 +13,7 @@ std::vector<int> findPrefixFunction(const std::string& str, int64_t& count) {
         }
         ++count;
         if (str[k] == str[i]) {
-            k++;
+            ++k;
         }
         ++count;
         pi[i] = k;

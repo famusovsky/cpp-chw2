@@ -1,7 +1,8 @@
 add_library(checker_lib
-  counter.cpp
+  substitutions_adder.cpp
   text_getter.cpp
+  counter.cpp
   timer.cpp
   functions.h
-  text_processing.h
+  funcs_for_checker.h
 )

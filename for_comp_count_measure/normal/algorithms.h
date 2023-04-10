@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 
+namespace normal {
+
 /// Метод, реализующий алгоритм Кнута-Морриса-Пратта c использованием уточненных граней и подсчитывающий количество сравнений
 /// \param str - строка, в которой ищем подстроку
 /// \param substr - подстрока, которую ищем в строке
@@ -24,3 +26,5 @@ std::vector<int> knuthMorrisPratt(const std::string& str, const std::string& sub
 /// \param count - количество сравнений
 /// \return вектор, в котором хранятся индексы начала вхождений подстроки в строку
 std::vector<int> naiveAlgorithm(const std::string& str, const std::string& substr, int64_t& count);
+
+}

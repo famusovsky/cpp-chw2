@@ -8,7 +8,7 @@
 /// \param file - файл, в который нужно записать результаты
 void runTimeToFile(
     std::vector<std::vector<int> (*)(const std::string &, const std::string &)> functions,
-    std::vector<std::string> names, std::vector<std::string> pathes, std::fstream &file);
+    std::vector<std::string> names, std::vector<std::string> pathes, std::fstream &file, bool with_substitutions);
 
 /// Метод, измеряющий количество сравнений в данных алгоритмах поиска вхождений подстроки в строку и записывающий результаты в файл
 /// \param functions - вектор функций, количество сравнений в которых нужно измерить
@@ -17,7 +17,7 @@ void runTimeToFile(
 /// \param file - файл, в который нужно записать результаты
 void runComparisonsToFile(
     std::vector<std::vector<int> (*)(const std::string &, const std::string &, int64_t &)> functions,
-    std::vector<std::string> names, std::vector<std::string> pathes, std::fstream &file);
+    std::vector<std::string> names, std::vector<std::string> pathes, std::fstream &file, bool with_substitutions);
 
 /// Метод, создающий файл
 /// \param path - путь к файлу
