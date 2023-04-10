@@ -1,8 +1,6 @@
 // 
 // Степанов А, БПИ212
 
-// XXX: #ifndef CHW2__ALGORITHMS_H_
-// XXX: #define CHW2__ALGORITHMS_H_
 #include <vector>
 #include <string>
 
@@ -23,5 +21,3 @@ std::vector<int> knuthMorrisPratt(const std::string& str, const std::string& sub
 /// \param substr - подстрока, которую ищем в строке
 /// \return вектор, в котором хранятся индексы начала вхождений подстроки в строку
 std::vector<int> naiveAlgorithm(const std::string& str, const std::string& substr);
-
-// XXX: #endif

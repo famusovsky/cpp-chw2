@@ -1,8 +1,6 @@
 // 
 // Степанов А, БПИ212
 
-// XXX: #ifndef CHW2__STRING_PROCESSING_H_
-// XXX: #define CHW2__STRING_PROCESSING_H_
 #include <string>
 #include <vector>
 
@@ -15,5 +13,3 @@ std::vector<int> findPrefixFunction(const std::string& str);
 /// \param str - строка, для которой вычисляется бордер-функция
 /// \return вектор, в котором хранится бордер-функция
 std::vector<int> findBorderFunction(const std::string& str);
-
-// XXX: #endif
