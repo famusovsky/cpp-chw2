@@ -2,6 +2,7 @@
 # Степанов А, БПИ212
 
 import os
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -49,11 +50,16 @@ def generate_graphs_from_csv(csv_path):
 
     plt.show()
 
+folders_pathes = list
 
-folder_path = input(
-    "Input path to the folder, which contains .csv files to make graphs from: ")
+if not sys.argv:
+    folders_pathes = list(input(
+        "Input path to the folder, which contains .csv files to make graphs from: "))
+else:
+    folders_pathes = sys.argv[1:]
 
-for file_name in os.listdir(folder_path):
-    if file_name.endswith('.csv'):
-        csv_path = os.path.join(folder_path, file_name)
-        generate_graphs_from_csv(csv_path)
+for folder_path in folders_pathes:
+    for file_name in os.listdir(folder_path):
+        if file_name.endswith('.csv'):
+            csv_path = os.path.join(folder_path, file_name)
+            generate_graphs_from_csv(csv_path)
