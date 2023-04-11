@@ -6,25 +6,32 @@ std::vector<int> findPrefixFunction(const std::string& str, int64_t& count) {
     std::vector<int> pi(n);
     pi[0] = 0;
     int k = 0;
-    // TODO: make normal counting -- you should not do 2 comparisons in the while loop everytime
     for (int i = 1; i < n; ++i) {
-        bool is_str_i_subst = str[i] != '?';
-        ++count;
-        if (!is_str_i_subst) {
-            while (k > 0 && str[k] != str[i] && str[k] != '?') {
+        count += 2;
+        bool is_str_i_subst = str[i] == '?';
+        bool is_str_k_subst = str[k] == '?';
+
+        if (!is_str_i_subst && !is_str_k_subst) {
+            while (k > 0 && str[k] != str[i]) {
+                ++count;
                 k = pi[k - 1];
-                count += 2;
+
+                if (k > 0 && str[k] == '?') {
+                    is_str_k_subst = true;
+                    break;
+                }
+                ++count;
             }
-            count += 2;
+            ++count;
         }
-        // TODO: make normal counting
-        if (is_str_i_subst) {
+
+        if (is_str_i_subst || is_str_k_subst) {
             ++k;
         } else {
-            if (str[k] == str[i] || str[k] == '?') {
+            ++count;
+            if (str[k] == str[i]) {
                 ++k;
             }
-            count += 2;
         }
         pi[i] = k;
     }
