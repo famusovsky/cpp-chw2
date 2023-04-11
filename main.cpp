@@ -13,19 +13,19 @@
 
 int main() {
     std::vector<std::vector<int> (*)(const std::string &, const std::string &)>
-        normal_time_functions = {&normal::knuthMorrisPratt, 
+        normal_time_functions = {&normal::knuthMorrisPrattStandart, 
                                  &normal::knuthMorrisPrattAdvanced,
                                  &normal::naiveAlgorithm};
     std::vector<std::vector<int> (*)(const std::string &, const std::string &, int64_t &)>
-        normal_comp_counts_functions = {&normal::knuthMorrisPratt,
+        normal_comp_counts_functions = {&normal::knuthMorrisPrattStandart,
                                         &normal::knuthMorrisPrattAdvanced, 
                                         &normal::naiveAlgorithm};
     std::vector<std::vector<int> (*)(const std::string &, const std::string &)>
-        subst_time_functions = {&with_substitutions::knuthMorrisPratt,
+        subst_time_functions = {&with_substitutions::knuthMorrisPrattStandart,
                                 &with_substitutions::knuthMorrisPrattAdvanced,
                                 &with_substitutions::naiveAlgorithm};
     std::vector<std::vector<int> (*)(const std::string &, const std::string &, int64_t &)>
-        subst_comp_counts_functions = {&with_substitutions::knuthMorrisPratt,
+        subst_comp_counts_functions = {&with_substitutions::knuthMorrisPrattStandart,
                                        &with_substitutions::knuthMorrisPrattAdvanced,
                                        &with_substitutions::naiveAlgorithm};
 

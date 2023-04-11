@@ -6,14 +6,16 @@
 #include "string_processing/functions.h"
 #include "algorithms.h"
 
-std::vector<int> normal::knuthMorrisPratt(const std::string& str, const std::string& substr) {
+std::vector<int> normal::kMP(const std::string& str, const std::string& substr,
+                             bool is_simple_or_advanced) {
     int n = str.length();
     int m = substr.length();
     std::vector<int> result;
     if (m == 0 || n == 0) {
         return result;
     }
-    std::vector<int> border = findPrefixFunction(substr);
+    std::vector<int> border =
+        is_simple_or_advanced ? findPrefixFunction(substr) : findBorderFunction(substr);
     int k = 0;
     for (int i = 1; i <= n; ++i) {
         while (k > 0 && substr[k] != str[-1 + i]) {
