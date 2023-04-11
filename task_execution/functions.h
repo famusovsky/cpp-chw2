@@ -1,3 +1,6 @@
+// АиСД-2, 2023, КДЗ-2
+// Степанов А, БПИ212
+
 #include <vector>
 #include <string>
 

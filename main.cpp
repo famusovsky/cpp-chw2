@@ -1,8 +1,7 @@
-//
+// АиСД-2, 2023, КДЗ-2
 // Степанов А, БПИ212
 
 #include <fstream>
-#include <iostream>
 #include <string>
 #include <vector>
 #include "for_time_measure/normal/algorithms.h"
@@ -14,11 +13,13 @@
 
 int main() {
     std::vector<std::vector<int> (*)(const std::string &, const std::string &)>
-        normal_time_functions = {&normal::knuthMorrisPratt, &normal::knuthMorrisPrattAdvanced,
+        normal_time_functions = {&normal::knuthMorrisPratt, 
+                                 &normal::knuthMorrisPrattAdvanced,
                                  &normal::naiveAlgorithm};
     std::vector<std::vector<int> (*)(const std::string &, const std::string &, int64_t &)>
         normal_comp_counts_functions = {&normal::knuthMorrisPratt,
-                                        &normal::knuthMorrisPrattAdvanced, &normal::naiveAlgorithm};
+                                        &normal::knuthMorrisPrattAdvanced, 
+                                        &normal::naiveAlgorithm};
     std::vector<std::vector<int> (*)(const std::string &, const std::string &)>
         subst_time_functions = {&with_substitutions::knuthMorrisPratt,
                                 &with_substitutions::knuthMorrisPrattAdvanced,
@@ -27,7 +28,9 @@ int main() {
         subst_comp_counts_functions = {&with_substitutions::knuthMorrisPratt,
                                        &with_substitutions::knuthMorrisPrattAdvanced,
                                        &with_substitutions::naiveAlgorithm};
-    std::vector<std::string> names = {"knuthMorrisPratt", "knuthMorrisPrattAdvanced",
+
+    std::vector<std::string> names = {"knuthMorrisPratt", 
+                                      "knuthMorrisPrattAdvanced",
                                       "naiveAlgorithm"};
 
     std::vector<std::string> input_pathes = {
@@ -38,15 +41,19 @@ int main() {
 
     file = createFile("../data/output/time_normal.csv");
     runTimeToFile(normal_time_functions, names, input_pathes, file, false);
+    file.close();
 
     file = createFile("../data/output/comp_count_normal.csv");
     runComparisonsToFile(normal_comp_counts_functions, names, input_pathes, file, false);
+    file.close();
 
     file = createFile("../data/output/time_with_subst.csv");
     runTimeToFile(subst_time_functions, names, input_pathes, file, true);
+    file.close();
 
     file = createFile("../data/output/comp_count_with_subst.csv");
     runComparisonsToFile(subst_comp_counts_functions, names, input_pathes, file, true);
+    file.close();
 
     return 0;
 }
