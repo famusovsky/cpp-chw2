@@ -1,8 +1,9 @@
 add_subdirectory(string_processing)
 
 add_library(for_comp_count_measure_normal_lib
+  kmp.cpp  
   kmp_advanced.cpp
-  kmp_simple.cpp
+  kmp_standart.cpp
   naive.cpp
   algorithms.h
 )
