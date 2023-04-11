@@ -1,9 +1,20 @@
-# АиСД-2, 2023, задание 5
+# АиСД-2, 2023, КДЗ-2
 ## Степанов А, БПИ212
 
+Входные файлы: [data/texts](/data/texts)
+
+Выходные данные: [data/output](/data/output/)
+
+Графики, иллюстрирующие выходные данные: [data/results](/data/results/)
+
+> Графики отсортированы по папкам, соответствующим файлам со входными данными
+
+### Запуск проекта 
 ```zsh
 cd <Путь к директории проекта>
-cmake --build ./build --target all
-./build/main
-python make_graphs.py ./data/output
+python generate.py # генерация входных данных
+cmake --build ./build --target all # сборка проекта и создание исполняемого файла
+./build/main # запуск исполняемого файла
+python make_graphs.py ./data/output # создание графиков
 ```
+
