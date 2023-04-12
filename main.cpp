@@ -12,6 +12,8 @@
 #include "task_execution/functions.h"
 
 int main() {
+    srand(time(nullptr));
+
     std::vector<std::vector<int> (*)(const std::string &, const std::string &)>
         normal_time_functions = {&normal::knuthMorrisPrattStandart, 
                                  &normal::knuthMorrisPrattAdvanced,

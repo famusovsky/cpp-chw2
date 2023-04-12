@@ -13,7 +13,7 @@ std::vector<int64_t> counter(std::vector<int> (*func)(const std::string&, const 
     std::vector<int64_t> counts(MAX_SUBSTR_SIZE / STEP);
     for (int n = STEP; n <= MAX_SUBSTR_SIZE; n += STEP) {
         int64_t count = 0;
-        srand(std::time(nullptr));
+
         std::string sub = input_text.substr(rand() % upper_border, n);
         if (with_substitution) {
             sub = addSubstitutions(sub);

@@ -14,7 +14,7 @@ std::vector<std::vector<int64_t>> timer(std::vector<int> (*func)(const std::stri
     for (int n = STEP; n <= MAX_SUBSTR_SIZE; n += STEP) {
         std::vector<int64_t> time(100);
         for (size_t i = 0; i < time.size(); i++) {
-            srand(std::time(nullptr));
+
             std::string sub = input_text.substr(rand() % upper_border, n);
             if (with_substitution) {
                 sub = addSubstitutions(sub);
